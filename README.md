@@ -9,10 +9,10 @@ Notification Service: https://github.com/BiasCoder/msig-notification-service
 a) Dalam kondisi apa retry tidak boleh dilakukan?
 Retry tidak boleh dilakukan pada error yang bersifat permanen seperti respon 4xx (misalnya bad request atau unauthorized), pada operasi yang tidak idempotent, atau ketika request kemungkinan sudah berhasil diproses tetapi response tidak diterima, karena dapat menyebabkan duplikasi eksekusi (misalnya double charge).
 
-## b) Perbedaan retry dan circuit breaker?
+b) Perbedaan retry dan circuit breaker?
 Retry digunakan untuk mencoba kembali request yang gagal akibat masalah sementara, sedangkan circuit breaker digunakan untuk menghentikan sementara request ke service yang sedang bermasalah guna mencegah overload dan cascading failure.
 
-## c) apa resiko retry tanpa jitter atau backoff?
+c) apa resiko retry tanpa jitter atau backoff?
 Tanpa penggunaan jitter atau backoff, retry dapat menyebabkan lonjakan traffic secara bersamaan (thundering herd), memperparah kondisi service, serta berpotensi menimbulkan overload pada sistem.
 
 ## 3.	Jawaban:
